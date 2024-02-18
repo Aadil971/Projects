@@ -1,34 +1,27 @@
-Every year, organizations across the movie industry present awards for excellent movies from the previous year. For your second portfolio project, you are being asked to design a terminal-based application for searching and printing award information based on given input information. Your application must meet the following design specifications:
+Python is well-known as a language that excels at data manipulation and visualization. There are many powerful tools built for Python which allow up to process large datasets to find, isolate, and present patterns within the data. We call the process of taking raw data and transforming it into a format we can work with "data wrangling". This is often required when working with graphing libraries, as they may expect data to be provided in a specific format. For your third portfolio project, you are being asked to design a terminal-based application for calculating and visualizing information from a Spotify dataset. The provided data includes top streamed songs in the first half of 2023 and various features about those songs.
 
-Your user interface should prompt the user to input the following information:
-Select 1 to search for a movie title
-Select 2 to search for a specific awards organization
-Select 0 to end the program
-Menu option 1: If the user selects 1, they should then be asked to enter a movie title
-As long as the title is spelled correctly, your program should accept any combination of letter cases and leading/trailing whitespace (e.g. both "Lord of the Rings" and "    lorD oF the RinGS    " should be valid
-You do not need to consider extra whitespace in the middle of the string
-Your program should then output the total number of awards won by that movie across all of the organizations listed in the data file
-If the movie title is not included in any of the awards list, the total printed is zero
-After printing the total, return to the first menu input prompt
-Menu option 2: If the user selects 2, they should then be asked to choose from a list of awards organizations
-As long as the organization acronym is spelled correctly, your program should accept any combination of letter cases and leading/trailing whitespace (e.g. both "Oscars" and "    osCarS    " should be valid
-You do not need to consider extra whitespace in the middle of the string
-Your program should then print all of the winning movies chosen by that organization, with each title on a new line
-If the entered organization cannot be found, print a notification message
-After printing, return to the first menu input prompt
-Menu option 0: If the user selects 0, print the goodbye message and end the program
-If the user enters a value other than 0, 1, or 2, they should be prompted to try again
-The program should continue to prompt for input until the user enters 0
-Your user interface must exactly match the given screenshot below. Pre-coded strings are provided in the starter template to help with exact formatting.
-Your file should be called "awards.py". A starter template is provided in the VS Code environment window.
-The data to be used is provided in a second .py file called "awards_data.py". You should not modify this file. Both files must be located in the same directory.
-You may not hardcode (manually add into the code) any data values beyond those given in the data section. The data lists may be changed for testing.
-A screenshot with example terminal behaviour is included below the rubric.
-Your code must include and use at least two user-defined functions
-The function stubs are provided in the given template- you must use the given name and argument structure
-Your functions may not access global variables aside from those presented in the data section
-count_awards accepts the movie title as a string and must return an integer value of the total award count
-print_award_winners accepts the name of the organization as a string and does not return any values
-All functions must include docstring documentation
-Your code must follow the conventions discussed so far in the course (names_with_underscores, four spaces for indentations, spaces between variables/operators, comments throughout, etc.).
-You may only use built-in Python functions that support compound data structures, user entry, or casting (such as len(), input() or int()). You may not import any modules beyond the given data file.
+Your application must meet the following design specifications:
+
+Prompt the user to enter a song feature based on the provided menu (already coded in the given template).
+Some menu options do not need to be developed. If the user enters 0, 1, 5 or 6, nothing should happen and the user should be prompted for their next entry.
+Menu option 2: If the user enters 2, calculate the total span of release years that are included in the data. Then output the artist, key, and mode of the oldest song using the required format (see screenshots below). This calculation/analysis must be done in a function called age_stats that accepts the menu input value and prints the required information. It should not return any values.
+Menu options 3, 4, 7, 8, 9, 10, 11, 12, 13: For each of these menu options, calculate the highest value, lowest value, and mean value of the desired song feature. These calculations must be done in a function called feature_stats that accepts the menu input value and prints the required information. The function should return the index location of the highest value, which should then be used to find and print the title of the song with the highest value.
+If the user enters -1, the entry loop should end and move to the plotting stage.
+If the user enters a value outside of the provided range, the user should be warned and prompted to try again: "You must enter a valid menu option."
+To conclude the data analysis, generate a plot of danceability vs. beats per minute of all songs. Your plot formatting should match the given example below.
+Your plot will be graded manually. You should save a .png version of your plot and upload it into your working directory. Your code must output the same plot that was uploaded.
+A screenshot with example terminal and plot behaviour is included below the rubric. Your output should match the given format exactly.
+The function stubs are provided in the given template- you must use the given name and argument/return value structure as written here. Your functions may not access global variables aside from those presented in the data section.
+Your code must follow the conventions discussed so far in the course (names_with_underscores, four spaces for indentations, spaces between variables/operators, comments throughout, etc.). All functions and classes must include docstring documentation. You may only use built-in Python functions that support compound data structures, user entry, or casting (such as len(), input() or int()). You may use any NumPy and Matplotlib functions. You may not import any modules beyond the those specified in the template.
+Data notes: All data is imported from the included csv file. You may not modify the content, order, or location of the csv file. Your code may be tested against a different data file. You may not hardcode (manually add into the code) any data values beyond those given in the data section.
+
+Plotting notes: To view your matplotlib output, you will need to click on "Open Desktop" in the top, right-hand corner of the environment window. This will open a simulated desktop where you can view and save your plot directly in the working directory. If you see the following warning in the terminal, you may ignore it: QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-mysql'
+
+Bonus Specifications:
+For optional bonus marks that may be applied to your total course grade, the following additional tasks may be completed:
+
+Create a Song class that constructs a Song object when given a single row of data. Each column should be saved as an attribute. Title, artist, key, and mode should be saved as strings. The remaining ten features should be saved as float values. Another attribute called "percentages" should be defined as a list containing all of the values for danceability through to speechiness.
+After the required plot, the user should be prompted to enter any row number (you may assume that only valid entries will be given). Create a Song object from the data located at the given row. The row value corresponds to the numpy array, not to the original spreadsheet.
+Use the Song object to plot the percentage values (danceability through speechiness) as a bar graph for the chosen song. Your plot formatting should match the given example below.
+Your plot will be graded manually. You should save a .png version of your plot and upload it into your working directory. Your code must output the same plot that was uploaded.
+Remember to document your class!
