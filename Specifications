@@ -1,0 +1,51 @@
+One of the primary functions of programming is to take large amounts of data and convert it to a form that is easy for people to understand and make decisions from. Think about modern fuel gauges in a car: the calculation combines information from how you drive, how much fuel is left and the fuel efficiency rate into a single number telling you an approximate distance you can travel until you run out of fuel.
+
+For your first portfolio project, you will be creating a program to help with a future mission to Mars. The Schulich Space Agency (SSA) has sent three rovers to Mars, each with different specifications. The SSA needs a program to help calculate how long it will take a specific rover to complete a mission of a certain distance. Below are the specifications of the SSA robots, which may not be representative of real-world rovers.
+
+Figure 14.1.1: Rover Specifications
+
+The following information will need to be input by the user:
+
+Which rover they are selecting to move (assume positive integer format)
+How far does the rover need to travel (assume positive integer km)
+Is there a storm between the rover and its destination (assume True/False entry)
+Using this information, you will calculate the total amount of time it will take that rover to complete the journey. To do this, you will need to calculate how long it will take the rover to drive to its destination and add the amount of time it will take to charge the battery using the rover’s solar panels each time the battery has been depleted.
+
+Assume that the rover cannot move and charge at the same time. Additionally, the rover must charge to 100% before it can continue moving, even if it doesn’t need 100% battery to reach its destination. The rover will only need to charge once its battery hits 0%. You may also assume that each rover is beginning the journey fully charged.
+
+If there is a dust storm forecast between the rover and its destination, you will need to multiply the total time by 1.2x to account for efficiency loss.
+
+Your program should display the total time it will take for the chosen rover to complete the mission.
+
+Calculation Notes:
+A kilowatthour (kWh) = number of kilowatts used by an electrical device over a 1 hour period
+
+e.g. a 100 kWh battery delivers powers at the rate of 100 kilowatts per hour
+
+Different motors have different efficiencies. With electric motors, efficiency is often measured in kWh/100km, or how much of the battery is used to drive the vehicle 100km. This is an average, much like liters of fuel/100km in an internal combustion engine powered vehicle. If a 100 kWh battery dissipates at 50 kWh/100 km, then that means the battery will be 0% depleted after 200 km. How long it takes to travel that 200 km depends on the rover's velocity.
+
+Solar arrays have different capacities depending on the number of panels, configuration etc. A 5kW capacity means the solar array generates 5kWh of power per hour in ideal conditions. A solar panel capable of generating 5 kW of power would be able to fully charge a 100 kWh battery in 20 hours.
+
+Example: It will take the Charlie rover 130 hours to travel 450 km given that two battery chargers will be required to travel that distance. If there is a storm, it will take 156 hours.
+
+Data Input and Output:
+Your program must take in three values in the specified order:
+
+Rover number (1, 2 or 3)
+Distance in km
+Storm status (True or False)
+Your input menu must match the given example below. You must match the specified capitals, spelling, spacing, and punctuation exactly.
+
+Your program must display the results using the print statement included in the starting Python template. Any changes to user input/output may result in your code not passing the automatic calculation tests.
+
+Your final calculation should be rounded to the nearest tenth. Rounding should occur at the end of the program.
+
+You may assume that only positive integers (e.g. 3, 450, etc.) and strings (i.e. "True" and "False") will given as input. If the rover number cannot be recognized (e.g. first input value is not 1, 2 or 3), then you should print the message "Rover number not recognized." and the program will end. You must match the specified capitals, spelling, spacing, and punctuation exactly.
+
+You do not need to test for any other validity except for the rover number.
+
+Your code should include at least two separate if/else logic blocks (may be a single if statement, if/else, or if/elif/else/etc.). You will lose marks for redundant logic that repeats itself (i.e. checking multiple if statements when one if/else would be sufficient).
+
+Your code must follow the conventions discussed so far in the course (names_with_underscores, four spaces for indentations, spaces between variables/operators, comments throughout, etc.)
+
+You may not use any built-in Python functions or external modules.
